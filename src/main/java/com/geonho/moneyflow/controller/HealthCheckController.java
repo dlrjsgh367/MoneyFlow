@@ -11,6 +11,8 @@ import java.util.Map;
 public class HealthCheckController {
 
     @GetMapping("/health")
+    // Map 종류
+    // https://wooktae.tistory.com/38
     public Map<String, String> healthCheck() {
         return Map.of("status", "OK");
     }
