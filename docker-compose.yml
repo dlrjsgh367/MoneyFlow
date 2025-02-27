@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mysql:
+    container_name: moneyflow-mysql
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: moneyflow123
+      MYSQL_DATABASE: moneyflow
+      MYSQL_USER: moneyflow_user
+      MYSQL_PASSWORD: moneyflow_pass
+    ports:
+      - "3306:3306"
+    networks:
+      - moneyflow-network
+
+networks:
+  moneyflow-network:
+    driver: bridge
